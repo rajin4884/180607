@@ -36,7 +36,6 @@ urlpatterns = [
     url(r'^board/',  include('board.urls', namespace='board')),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^bookmark/', include('bookmark.urls', namespace='bookmark')),
-    url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^photo/', include('photo.urls', namespace='photo')),
     # url(r'^mentoring/', include('mentoring.urls', namespace='mentoring')),
     url(r'^multes/',  include('multes.urls', namespace='multes')),

@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # shkim
     'bookmark.apps.BookmarkConfig',
-    'blog.apps.BlogConfig',
-    'tagging.apps.TaggingConfig',
     'disqus',
     'django.contrib.sites',
     'photo.apps.PhotoConfig',
