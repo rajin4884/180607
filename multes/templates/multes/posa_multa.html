@@ -1,0 +1,114 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/crafts.css" %}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">  <a href="{% url 'multes:posa_multa' %}" style="color:black;">멘토리스트</h1>
+            <li style="text-align:right; list-style: none; color:black "><a href="{% url 'multes:craft_new' %}" class="top-menu" style="position: relative; color: blakck; right: 20px;"><span class="fa fa-plus"></span> 수업등록</a></li>
+            <hr>
+        </div>
+        <div class="col-md-12">
+          <form method="GET" action="" class="text-center" id="search">
+            <input type="text" name = 'q' placeholder="게시물의 제목을 입력해주세요." value="{{ request.GET.q }}"/>
+            <input type="submit" value="검색" id = "search"/>
+          </form>
+        </div>
+
+      </div>
+
+<div class="row" style="width: 100%; text-align: center;">
+  <div class="row" style="width: 90%">
+  {% for craftpost in craftposts %}
+  {% if forloop.counter0|divisibleby:3 %}
+    {% include "postman/_post.html" %}
+    {% elif not forloop.counter0|divisibleby:3 %}
+    {% include "postman/_post.html" %}
+    {% endif %}
+    {% if forloop.last and forloop.counter0|divisibleby:3%}
+  </div>
+  {% endif %}
+    {% empty %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+        {% if user.is_authenticated %}
+        <div class="post" style="width: 100%; position: relative;margin-left: 5px;">
+            <h1>등록된 게시물이 없습니다.</h1>
+            <div class="posttitle">
+            <a class="btn" href="{% url 'multes:craft_new' %}"><h1> 게시물 추가하기</h1></a>
+
+            </div>
+        </div>
+        {% else %}
+            <div class="post" style="width: 100%; position: relative;margin-left: 5px;">
+                <h1>회원만 이용가능합니다.</h1>
+                <div class="posttitle">
+                <a class="btn" href="{% url 'member:signup' %}"><h1>회원가입</h1></a>
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+    <div class="row" style="width: 50%; position: static;margin-bottom:0px;padding: 100px 0;width:100%;height:50px;">
+      <div class="row">
+        {% include "_craft_pagination.html" %}
+      </div>
+    </div>
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

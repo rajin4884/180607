@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}post_search.html{% endblock %}
+
+{% block content %}
+<div id="content">
+
+<h1>Blog Search</h1>
+
+<form action="." method="post"> {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit" />
+</form>
+
+<br/><br/>
+
+{% if object_list %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>회사명</th>
+      <th>직종</th>
+      <th>위치</th>
+      <th>정보</th>
+    </tr>
+  </thead>
+  <tbody id="myTable">
+
+{% for companys in object_list %}
+    <tr>
+      <td><a href='{{ companys.get_absolute_url }}'>{{ companys.company_name }}</a></td>
+      <td>{{ companys.occ }}</td>
+      <td>{{ companys.location }}</td>
+
+      <td>
+        <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#myModal">더보기</button>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">기업 정보</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-borderless">
+                      <tbody>
+                         <tr>
+                           <th>회사명</th>
+                           <td>{{ companys.company_name }}</td>
+                         </tr>
+                         <tr>
+                           <th>업종</th>
+                           <td>{{ companys.occ }}</td>
+                         </tr>
+                         <tr>
+                           <th>위치</th>
+                           <td>{{ companys.location }}</td>
+                         </tr>
+                         <tr>
+                           <th>설명</th>
+                           <td>{{ companys.scale }}</td>
+                         </tr>
+                         <tr>
+                           <th>연봉</th>
+                           <td>약 {{ companys.payment }} 만원</td>
+                         </tr>
+                       </tbody>
+                     </table>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+
+  {% endfor %}
+</table>
+
+{% elif search_term %}
+<b><i>Search Word({{ search_term }}) Not Found !</i></b>
+{% endif %}
+
+</div>
+{% endblock %}

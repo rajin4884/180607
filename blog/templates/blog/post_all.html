@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/heroicfeatures.css" %}{% endblock %}
+{% block content %}
+<div id="content">
+
+<h3>멘토 리스트</h3>
+<br>
+<div class ="box" style="border: 2px solid black;">
+  <div class = "age">
+    <a>나이 : </a>&nbsp;
+      <input type="checkbox" name="chk_info" value="10대">10대 &nbsp;
+      <input type="checkbox" name="chk_info" value="20대">20대 &nbsp;
+      <input type="checkbox" name="chk_info" value="30대">30대 &nbsp;
+      <input type="checkbox" name="chk_info" value="10대">40대 &nbsp;
+      <input type="checkbox" name="chk_info" value="20대">50대 &nbsp;
+      <input type="checkbox" name="chk_info" value="30대">60대 &nbsp;
+  </div>
+
+  <div class = "gender">
+    <a>성별 : </a>&nbsp;
+      <input type="checkbox" name="chk_info" value="남자">남자 &nbsp;
+      <input type="checkbox" name="chk_info" value="여자">여자
+  </div>
+
+
+  <div class = "year">
+    <a>경력 : </a>&nbsp;
+      <input type="checkbox" name="chk_info" value="3년">3년&nbsp;
+      <input type="checkbox" name="chk_info" value="4년">4년&nbsp;
+      <input type="checkbox" name="chk_info" value="5년">5년&nbsp;
+      <input type="checkbox" name="chk_info" value="6년">6년
+  </div>
+
+  <div class="price">
+    <a>가격 : </a>&nbsp;
+      <input type="text" name="chk_info" value="가격">&nbsp;~&nbsp;
+      <input type="text" name="chk_info" value="가격">
+
+  </div>
+
+  <div class = "sbutton">
+       <button type="button" class="btn" style = "background-color: #F9A277; ">검색</button>&nbsp;
+       <button type="button" class="btn">초기화</button>
+
+  </div>
+</div>
+<!--  박스끝-->
+
+<div class="row list text-center">
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/jackson.jpg" alt="">
+      <figcaption>
+      <h3>웹사이트 기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/eunwoo.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/yoona.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row text-center">
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/kang.png" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/suji.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/jaesuk.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row text-center">
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/yeob.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/hun.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-4">
+    <div class="card">
+      <img class="card-img-top" src="../static/img/tylor.jpg" alt="">
+      <figcaption>
+      <h3>웹기획자</h3>
+      <p>웹기획자</p>
+      <div class="icons">
+      <a href="#">
+        <i class="fa fa-heart-o fa-2x fa-fw" ></i>
+      </a>
+    </div>
+      <!-- <i class="ion-ios-arrow-right"></i> -->
+    </figcaption>
+      <div class="card-footer">
+        <button type="button" class="btn" style = "background-color: #F9A277; ">멘토링 신청하기</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!--  게시글 번호-->
+<div class = "boardnum">
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
+        {% endif %}
+
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+        {% endif %}
+    </span>
+
+</div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+<!-- Footer -->
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

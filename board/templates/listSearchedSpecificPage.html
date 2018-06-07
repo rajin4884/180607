@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/style.css" %}{% endblock %}
+{% block content %}
+
+
+<div class="centered">
+  <br>
+  <h3>자유게시판/h3>
+  <hr style="width:50%;left: 0;margin-left: 0;">
+{% comment %}
+totalCnt: <strong>{{ totalCnt }}</strong> current_page: <strong>{{ pageForView }}</strong> boardList: <strong>{{ boardList|length }}</strong>
+{% endcomment %}
+<table cellspacing=1 width=700 border=0>
+    <tr>
+        <td>총 게시물수: {{ totalCnt }}</td>
+        <td><p align=right> 페이지:{{ pageForView }}
+        </td>
+    </tr>
+</table>
+
+<table cellspacing=1 width=700 border=1>
+    <tr>
+        <td width=50><p align=center>번호</p>
+        </td>
+        <td width=100><p align=center>이름</p>
+        </td>
+        <td width=320><p align=center>제목</p>
+        </td>
+        <td width=100><p align=center>등록일</p>
+        </td>
+        <td width=100><p align=center>조회수</p>
+        </td>
+    </tr>
+
+    {% if boardList %}
+        <ul>
+            {% for boardRow in boardList %}
+            <tr>
+            <td width=50><p align=center>{{ boardRow.id }}</p></td>
+            <td width=100><p align=center>{{ boardRow.name }}</p></td>
+            <td width=320>
+                <p align=center>
+                    <a href="/board/viewWork?memo_id={{ boardRow.id }}&current_page={{ pageForView }}&searchStr={{searchStr}}" title="{{ boardRow.memo}}">{{ boardRow.subject }}
+                </p>
+            </td>
+            <td width=100><p align=center>{{ boardRow.created_date }}</p></td>
+            <td width=100><p align=center>{{ boardRow.hits }}</p></td>
+            </tr>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Data.</p>
+    {% endif %}
+</table>
+
+{# This is a comment #}
+
+<table cellspacing=1 width=700 border=1 >
+    <tr>
+        <td>
+        {% for page in totalPageList %}
+            <a href="/board/listSearchedSpecificPageWork?searchStr={{searchStr}}&pageForView={{page}}" >
+
+            [
+            {% ifequal page pageForView %}
+                <b>
+            {% endifequal %}
+            {{page}}
+
+            {% ifequal page pageForView  %}
+                </b>
+            {% endifequal %}
+            ]
+        {% endfor %}
+        </td>
+    </tr>
+</table>
+
+
+
+<table width=700>
+    <tr>
+        <td><input type=button value="전체 목록으로 돌아가기"  OnClick="window.location='/'">
+    </tr>
+</table>
+</div>
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

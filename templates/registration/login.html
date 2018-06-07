@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}login.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% block content %}
+<div id="content0">
+
+    <h2>로그인 </h2>
+
+    {% include 'include/form.html' with form=login_form submit_title='로그인' %}
+{% endblock %}

@@ -1,0 +1,101 @@
+
+/* photo_detail.html */
+table.photo-detail {
+    margin: 0px;
+    border: 1px solid #ccc;
+}
+
+table.photo-detail td {
+    width: 50%;
+}
+
+table.photo-detail ul li {
+    font-weight: bold;
+    list-style: none;
+    padding:  10px 0;
+}
+
+table.photo-detail ul p {
+    font-style: italic;
+    font-weight: normal;
+    display: inline;
+}
+div.text li {
+    font-weight: bold;
+}
+div.clear_float {
+    clear: both;
+}
+div .text{
+  position: relative;
+  top: 30px;
+  list-style: none;
+}
+#content{
+  list-style: none;
+}
+#id_text{
+  border: 2px solid #e19c97;
+}
+textarea {
+    color:black;
+}
+div.row  textarea{
+    position:relative;
+    left: 10px;
+    width: 500px;
+}
+label {
+    width: 100px;
+    padding: 1px 10px 0 0;
+}
+div.row  input{
+    position:relative;
+    left: 10px;
+    width: 250px;
+}
+.comment a {
+    color: #4a58f6;;
+}
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+hr {
+    height: 1px;
+    background-color: #747784;
+}
+.post, .postmini, .postuser  {
+    border: 2px solid #e19c97;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    margin: 2em;
+    background: rgba(255, 255, 255, 1);
+    overflow: hidden;
+}
+.halfwidth {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+}
+.btn-danger, .btn-danger:focus {
+    background-color: rgba(212, 65, 132, 0.86);
+    background-image: none;
+    border-color:  rgba(212, 65, 132, 0.86);
+    width:100%;
+    border-radius:100px;
+    margin-top: 1em;
+}
+.btn-danger:hover {
+    background-color: rgba(220,60, 130, 0.9);
+}
+.btn-info {
+    background-color: rgba(71, 90, 233, 0.9);
+    background-image: none;
+    border-color: rgba(71, 90, 233, 0.86);
+    width:100%;
+    border-radius:100px;
+    margin-top: 1em;
+}
+.btn-info:hover {
+    background-color: rgba(44, 65, 225, 0.9);
+}

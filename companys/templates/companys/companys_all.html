@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}기업 목록{% endblock %}
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+
+{% block content %}
+<div id="content">
+
+<div class="complist" style="margin-top: 5%; margin-bottom: 15%;">
+    <h2>기업리스트</h2>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>회사명</th>
+          <th>직종</th>
+          <th>위치</th>
+          <th>디테일</th>
+          <th>모달</th>
+        </tr>
+      </thead>
+
+      <tbody id="myTable">
+
+        {% for companys in companylist %}
+        <tr>
+
+          <td>{{ companys.company_name }}</td>
+          <td>{{ companys.occ }}</td>
+          <td>{{ companys.location }}</td>
+          <td>
+            <button type="button" class="btn btn-sm"><a href='{{ companys.get_absolute_url }}'/>디테일</button>
+          </td>
+
+          <td>
+            <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#myModal">모달</button>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+
+                    <h4 class="modal-title">기업 정보</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table table-borderless">
+
+                    <tbody>
+                       <tr>
+                         <th>회사명</th>
+                         <td>{{ companys.object.company_name }}</td>
+                       </tr>
+                       <tr>
+                         <th>업종</th>
+                         <td>{{ companys.object.occ }}</td>
+                       </tr>
+                       <tr>
+                         <th>위치</th>
+                         <td>{{ companys.object.location }}</td>
+                       </tr>
+                       <tr>
+                         <th>설명</th>
+                         <td>{{ companys.object.scale }}</td>
+                       </tr>
+                       <tr>
+                         <th>연봉</th>
+                         <td>약 {{ companys.object.payment }} 만원</td>
+                       </tr>
+                     </tbody>
+                   </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">닫기</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+
+
+
+{% endblock %}

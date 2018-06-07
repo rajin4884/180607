@@ -1,0 +1,78 @@
+.centered {
+	width: 100%;
+	position: absolute;
+	height: auto;
+	text-align: center;
+}
+.detail{
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+	/* margin: 20px 10px; */
+}
+
+textarea, .up {
+	width: 100%;
+	border: 0px;
+}
+
+.line {
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+.tables thead th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+    background: #e7708d;
+    margin: 20px 10px;
+}
+.tables tbody th {
+    width: 150px;
+    padding: 10px;
+}
+.table td {
+    width: 350px;
+    padding: 10px;
+}
+/* table .even {
+    background: #fdf3f5;
+} */
+
+.BDdetail {
+	width: 80%;
+	margin: 0 10%;
+}
+
+.BDlist > input {
+	width: 100%;
+}
+
+
+.upbtns {
+	float: right;
+	margin: 20px 0;
+
+}
+
+.wbtns{
+		width: 100px;
+}
+
+.page tbody > tr > td{
+	width: 50%;
+}
+
+.table-hover {
+	margin-bottom: 30px;
+}
+
+p {
+	margin: 5px 0;
+}
+footer{
+		position: absolute;
+    width: 100%;
+    bottom: -300px;
+}

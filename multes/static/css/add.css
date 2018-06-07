@@ -1,0 +1,122 @@
+body {
+    color: black;
+     font-family: 'Lato', sans-serif;
+}
+.text-center {
+  padding :50px 0px 0px 0px;
+  color: black;
+}
+.text-center{
+  font-size: 30px;
+}
+
+  /* 이걸 넣는게 좋을지 물어보기 */
+/* .post{
+    border: 2px solid #e19c97;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    margin: 2em;
+    background: rgba(255, 255, 255, 1);
+    overflow: hidden;
+} */
+.row{
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 5em;
+}
+.post-form{
+  margin-left: auto;
+  margin-right: auto;
+}
+.out{
+  width:1000px;
+}
+.in{
+  width:1000px;
+  background:#d0d4dd;
+}
+button{
+  float: right;
+}
+tr{
+   background:#ffffff;
+}
+td{
+  border: 1px solid gray;
+}
+.tdsize{
+  background: #e19c97;
+  text-align: center;
+}
+
+@media (min-width 640px, max-width: 790px) {
+    table{
+        max-height: 40%;
+        max-width: 400px;
+    }
+}
+footer{
+  position: absolute;
+  bottom: -500px;
+  width: 100%;
+  height: 30%;
+}
+
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background: rgba(25, 25, 25, 0.2);
+}
+
+.footer ul {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom:0;
+    padding: 0;
+
+}
+
+.footer ul li a {
+    display: block;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.footer a {
+    color: black;
+}
+
+
+.footer a:hover {
+    color: #fff;
+}
+
+/* @media (min-width: 790px) {
+    Navbar positioning
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .navbar-wrapper .navbar1, .navbar-wrapper .navbar2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-top: .5em;
+    }
+    .row h1 {
+      padding :50px 0px 0px 0px;
+      color: black;
+    }
+
+} */

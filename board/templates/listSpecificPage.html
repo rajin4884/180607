@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/style.css" %}{% endblock %}
+{% block content %}
+<div class="centered">
+<br>
+<h3>자유게시판</h3>
+<hr>
+<div class="BDdetail">
+{% comment %}
+totalCnt: <strong>{{ totalCnt }}</strong>
+current_page: <strong>{{ current_page }}</strong>
+boardList: <strong>{{ boardList|length }}</strong>
+{% endcomment %}
+
+<div style="width:100%;" class="clearfix">
+        <div class="pull-left">총 게시물수: {{ totalCnt }}</div>
+        <div class="pull-right">페이지:{{ current_page }}</div>
+</div>
+
+  <table class="tables table-hover" width=100%>
+    <thead>
+      <tr>
+          <th scope="cols"><p align=center>번호</p>
+          </th>
+          <th scope="cols"><p align=center>이름</p>
+          </th>
+          <th scope="cols"><p align=center>제목</p>
+          </th>
+          <th scope="cols"><p align=center>등록일</p>
+          </th>
+          <th scope="cols"><p align=center>조회수</p>
+          </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if boardList %}
+          <ul>
+              {% for boardRow in boardList %}
+              <tr>
+              <td class="line"><p align=center>{{ boardRow.id }}</p></td>
+              <td class="line"><p align=center>{{ boardRow.name }}</p></td>
+              <td class="line">
+                  <p align=center>
+                      <a href="/board/viewWork?memo_id={{ boardRow.id }}&current_page={{ current_page }}&searchStr=None" title="{{ boardRow.memo}}">{{ boardRow.subject }}
+                  </p>
+              </td>
+              <td class="line"><p align=center>{{ boardRow.created_date }}</p></td>
+              <td class="line"><p align=center>{{ boardRow.hits }}</p></td>
+              </tr>
+              {% endfor %}
+          </ul>
+      {% else %}
+          <p>No Data.</p>
+      {% endif %}
+    </tbody>
+</table>
+
+
+  <table>
+      <tr>
+          <td>
+          {% for page in totalPageList %}
+              <a href="/board/listSpecificPageWork?current_page={{page}}" >
+              [
+              {% ifequal page current_page %}
+                  <b>
+              {% endifequal %}
+              {{page}}
+
+              {% ifequal page current_page  %}
+                  </b>
+              {% endifequal %}
+              ]
+          {% endfor %}
+          </td>
+      </tr>
+  </table>
+
+
+  <table width=100%>
+      <tr>
+          <td><input type=button value="글쓰기"  OnClick="window.location='/board/show_write_form'" style="width: 100%;">    </td>
+          <td><form name=searchf method=post action="/board/searchWithSubject/">
+              <p align=right><input type=text name=searchStr size=50  maxlength=50>
+              <input type=submit value="글찾기"></p>
+          </td>
+      </tr>
+  </table>
+  </div>
+
+
+
+  <style>
+  .pagination {
+    list-style:none;
+    position: relative;
+    float:left;
+    display:inline;
+  }
+  .pagination li {
+      float:left;
+  }
+  .pagination li a, .pagination span {
+      float:left;
+      padding:4px;
+      margin-right:3px;
+      color:#000;
+      border:2px solid #000;
+      text-align:center;
+      text-decoration:none;
+  }
+  .pagination li a:hover, .pagination li a:focus {
+      color:#fff;
+      background-color:#123;
+  }
+  .pagination{
+    width: 100%;
+    position: static;
+    margin: 0 30%;
+  }
+  .paginationdiv {
+
+    	width: 50%;
+      text-align: center;
+      margin: 0 25%;
+  }
+  </style>
+  <div class="row paginationdiv">
+  {% if craftposts.has_other_pages %}
+     <ul class="pagination">
+       {% if craftposts.has_previous %}
+         <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+       {% else %}
+         <li class="disabled"><span>&laquo;</span></li>
+       {% endif %}
+       {% for i in craftposts.paginator.page_range %}
+         {% if craftposts.number == i %}
+           <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+         {% else %}
+           <li><a href="?page={{ i }}">{{ i }}</a></li>
+         {% endif %}
+       {% endfor %}
+       {% if craftposts.has_next %}
+         <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+       {% else %}
+         <li class="disabled"><span>&raquo;</span></li>
+       {% endif %}
+     </ul>
+  {% endif %}
+
+  </div>
+
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}기업 목록{% endblock %}
+
+<!-- {% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" /> -->
+
+{% block content %}
+    <div id="content">
+
+        <h1><a href="">면접수수료</a></h1>
+
+        <table id="scores">
+            <tr>
+                <th>기업명</th>
+                <th>멘토/멘티명</th>
+                <th class="center">면접수수료</th>
+
+            </tr>
+            {% for success2 in success1 %}
+            <tr>
+                <td><a href="">{{ success2.company_name }}</a></td>
+                <td><a href="">{{ success2.mem_num }}</a></td>
+                <td class="center">{{ success2.g_pay}}</td>
+                <!-- <td class="center">{{success2.gpay_total}}</td> -->
+            </tr>
+        {% endfor %}
+
+            <th class="bottom"><b>합계</b></th>
+            <th></th>
+
+
+        </table>
+    </div>
+{% endblock %}

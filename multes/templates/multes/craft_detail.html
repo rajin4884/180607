@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}photo_detail.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/detail.css" %}{% endblock %}
+
+{% block content %}
+<div class = "post">
+<div id="content">
+    <h2>멘토링명:"{{ craftpost.title }}"</h2>
+
+    <table class="photo-detail">
+    <tr>
+    <td>
+        <a href="{{ craftpost.photo.url }}">
+        <img style="max-width:100%; max-height:100;" src="{{ craftpost.photo.url }}" />
+        </a>
+    </td>
+
+    <td>
+    <ul class="cont">
+        <li>멘토:<p> {{ craftpost.author }}</p></li>
+
+        <li>경력: <p>{{ craftpost.career }}년</p></li>
+
+        <li>금액: <p>{{ craftpost.money }}원</p></li>
+
+        <li>등록일: <p>{{ craftpost.published_date }}</p> </li>
+
+        <li>{% if craftpost.link %}참고url: <p><a href="{{ craftpost.link }}">{{craftpost.link}}</a>{% endif %}</p></li>
+
+    </ul>
+    <button class="bnt1 btn btn-default" onclick="myFunction()" style="border: 2px solid #F9A277;background: white; color: #000; width: 80%; margin: 0 10% 10px 10%;">신청하기</button>
+  </td>
+
+    </tr></table>
+    <div class = "text">
+    <li>내용: </li>
+    <p>{{ craftpost.text|linebreaks }}</p>
+  </div>
+  {% if user.is_authenticated and request.user %}
+  <div class="row">
+      <div class="col-md-6 col-lg-6">
+          <div class="halfwidth center-block">
+              <a class="btn btn-info" href="{% url 'multes:craft_edit' pk=craftpost.pk %}"><span class=" glyphicon glyphicon-pencil"> 수정 </span></a>
+          </div>
+      </div>
+      <div class="col-md-6 col-lg-6">
+          <div class="halfwidth center-block">
+              <a class="btn btn-danger " href="{% url 'multes:craft_remove' pk=craftpost.pk %}"><i class="fa fa-times"> 삭제</i></a>
+          </div>
+        </div>
+    </div>
+   {% endif %}
+</div>
+<hr>
+  <div class="row">
+   <div class="col-md-6 col-lg-6">
+      <p class="text-right"><strong> 댓글 </strong></p>
+   </div>
+
+</div>
+       {% for comment in craftpost.comments.all %}
+       {% if  comment.approved_comment %}
+<div class="comment">
+<div class="row">
+   <div class="col-md-6 col-lg-6">
+   <p><strong>{{ comment.name }}</strong></p>
+   </div>
+   <div class="col-md-6 col-lg-6 text-right">
+       <div class="date">{{ comment.created_date }}</div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-6 col-lg-6">
+       <p>{{ comment.text|safe }}</p>
+   </div>
+   <div class="col-md-6 col-lg-6 text-right">
+       {% if user.is_superuser %}
+       <a class="btn btn-default " href="{% url 'multes:comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+       {% elif request.user == comment.author %}
+       <a class="btn btn-default pull-right" href="{% url 'multes:comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+
+       {% endif %}
+   </div>
+</div>
+</div>
+<hr>
+{% elif not comment.approved_comment %}
+   {% if request.user %}
+<div class="comment">
+<div class="row">
+   <div class="col-md-10 col-lg-10">
+       <p>안녕하세요, <strong>{{ comment.name }}</strong></p>
+       <p>{{ comment.created_date }}에 등록되었습니다.</p>
+       <p>{{ comment.text|safe }}</p>
+   </div>
+   <div class="col-md-2 col-lg-2 text-right">
+   <!-- <a class="btn btn-default " href="{% url 'multes:comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+       {% if user.is_superuser %}
+   <a class="btn btn-default " href="{% url 'multes:comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+       {% endif %} -->
+   </div>
+</div>
+</div>
+   <hr>
+           {% endif %}
+       {% endif %}
+
+       {% empty %}
+       <p>댓글가 없어요. 어떻게 생각하세요?</p>
+       {% endfor %}
+        <h3>새로운 댓글</h3>
+           <form method="POST" class="post-form">{% csrf_token %}
+
+           <!-- {% if not user.is_authenticated %}
+
+           <p><label for="id_author">작성자:</label> <input id="id_author" maxlength="200" name="author" type="text"></p>
+           {% endif %} -->
+
+               <p><label for="id_text">내용:</label> <textarea class="form-control" cols="40" id="id_text" name="text" rows="10"></textarea></p>
+
+               <button type="submit" class="save btn btn-default">저장</button>
+
+
+           </form>
+
+
+</div>
+</div>
+</div>
+<script>
+function myFunction() {
+alert("신청되셨습니다.");
+}
+</script>
+{% endblock %}
+
+{% block footer %}
+{% include "footer/footer.html" %}
+{% endblock footer %}

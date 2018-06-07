@@ -1,0 +1,122 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% block title %}t1801starters{% endblock %}</title>
+
+{% load staticfiles %}
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+  <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% static "icon/simple-line-icons.css" %}{% endblock %}" />
+
+
+</head>
+
+
+<body>
+  <div class="topbar">
+    <ul class="nav justify-content-end fixed-top" id="topbar">
+    {% if user.is_active %}
+
+
+    <span class="navbar-text">{% firstof user.get_short_name user.get_username %} {{ user.user_categ }}
+      &nbsp;&nbsp;</span>
+
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        마이페이지
+      </a>
+      <div class="dropdown-menu dropdown-menu-right justify-content-center" aria-labelledby="navbarDropdownMyPage">
+        <a class="dropdown-item" href="#">회원정보수정</a>
+        <a class="dropdown-item" href="#">찜하기</a>
+        <a class="dropdown-item" href="#">멘토링</a>
+      </div>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">장바구니</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'member:logout' %}">로그아웃</a>
+    </li>
+
+    {% else %}
+
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'member:login' %}">로그인</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'member:signup' %}">회원가입</a>
+    </li>
+
+    </ul>
+    {% endif %}
+
+  </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top " id="bgbg">
+      <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}">
+          STARTERS</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+          <ul class="navbar-nav ml-left">
+
+              <li class="nav-item">
+                <a class="nav-link"  href="#" >스타터스  </a>  </li>
+
+              <li class="nav-item">
+                <a class="nav-link"   href="{% url 'multes:posa_multa' %}" >  멘토 </a>  </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link"   href="{% url 'companys:index' %}" >  기업 </a>    </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">포트폴리오</a>  </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">마이페이지</a>  </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'board:index' %}">커뮤니티</a>  </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+
+    </nav>
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock footer %}
+
+
+
+
+</body>
+
+</html>

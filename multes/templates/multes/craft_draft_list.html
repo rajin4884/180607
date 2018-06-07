@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/crafts.css" %}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1 class="text-center">My Drafts</h1>
+
+        </div>
+    </div>
+    <hr>
+ {% for craftpost in draftposts %}
+{% if forloop.counter0|divisibleby:3 %}
+<div class="row">
+    {% include "_post.html" %}
+
+{% elif not forloop.counter0|divisibleby:3 %}
+    {% include "_post.html" %}
+ </div>  <!--end row  -->
+{% endif %}
+{% if forloop.last and forloop.counter0|divisibleby:3%}
+<!--closing the row if there isn't a second col in the row  -->
+ </div>
+{% endif %}
+        {%  empty %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="post">
+        <h1 class="posttitle"> You have no pending blog posts. <a href="/new">Go write something!!</a> </h1>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <hr>
+         <!--pagination  -->
+  {% if draftposts.has_other_pages %}
+  <ul class="pagination">
+    {% if draftposts.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in draftposts.paginator.page_range %}
+      {% if draftposts.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if draftposts.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% include "footer/footer.html" %}
+{% endblock footer %}

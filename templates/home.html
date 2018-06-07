@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}t1801silver{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css" %}{% endblock %}
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="../static/icon/simple-line-icons.css"></script> -->
+
+{% block content %}
+
+<header class="masthead text-white text-center">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5"></h1>
+      </div>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form>
+          <div class="form-row">
+            <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <input type="text" class="form-control form-control-lg" placeholder="">
+            </div>
+            <div class="col-12 col-md-3">
+              <button type="submit" class="btn btn-block btn-lg" style="background-color: #D9D9D9; color: black;height:50px; width: 100px;font-size: 10pt; text-align: center;">검색</button>
+            </div>
+            <div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#" style="color: white"> # 멘토</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp <a href="#"  style="color: white"># 멘티</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp <a href="#"   style="color: white"># 기업리스트</a></div>
+            <div>&nbsp&nbsp&nbsp&nbsp <a href="#" style="color: white"># 후기베스트</a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Icons Grid -->
+<section class="features-icons bg-light text-center">
+  <h2 style="color: #F9A277; font-weight: bold;">후기 베스트</h2>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4"><a href = "#" style="text-decoration: none">
+
+        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="fa fa-file-code-o m-auto text-primary"></i>
+          </div>
+          <h4 style="color:black">웹기획자가 되기위한 길</h4>
+          <p class="lead mb-0" style="color:gray">김진우 멘토님</p>
+        </div>
+      </a>
+      </div>
+      <div class="col-lg-4"> <a href = "#" style="text-decoration: none">
+        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="	fa fa-volume-up m-auto text-primary"></i>
+          </div>
+          <h4 style="color:black">가수의 꿈</h4>
+          <p class="lead mb-0" style="color:gray">송민호 멘토님</p>
+        </div>
+      </a>
+      </div>
+      <div class="col-lg-4"> <a href = "#" style="text-decoration: none">
+        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+          <div class="features-icons-icon d-flex">
+            <i class="fa fa-bitcoin m-auto text-primary"></i>
+          </div>
+          <h4 style="color:black">회계사가 되고 싶어요!</h4>
+          <p class="lead mb-0" style="color:gray">조우리 멘토님</p>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image Showcases -->
+<section class="showcase">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+
+      <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/bg-showcase-1.jpg');"></div>
+      <div class="col-lg-6 order-lg-1 my-auto showcase-text"><a href = "#" style="text-decoration: none; color:black">
+        <h2>세상을 디자인 하다.</h2>
+        <h5 style="color:gray">이송백 멘토님</h5>
+        <p class="lead mb-0">디자인 계열에 취업하고 싶으신 분을 혹은 디자인에 관심있으신 분을 멘토링 하고자 합니다. 디자인을 하기위해서 필요한 툴에 대해 알려드리고, 작업물을 만들어 자신만의 포트폴리오를 만들 수 있도록 진행할 예정입니다. </p>
+      </div>
+    </a>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-lg-6 text-white showcase-img" style="background-image: url('../static/img/bg-showcase-2.jpg');"></div>
+      <div class="col-lg-6 my-auto showcase-text"><a href = "#" style="text-decoration: none; color:black">
+        <h2>프로그래머.. 코드는 내친구</h2>
+        <h5 style="color:gray">김형래 멘토님</h5>
+        <p class="lead mb-0">프로그래머가 되기위해서 꼭 필요한 능력은 무엇일까요? 저는 여러분이 프로그래머가 되기 위해 필요한 역량을 강화시키고, 실무에 필요한 프로그래밍 능력을 향상시키기 위해 최선을 다해 노력할 것입니다.</p>
+      </div>
+    </a>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/img/bg-showcase-3.jpg');"></div>
+      <div class="col-lg-6 order-lg-1 my-auto showcase-text"><a href = "#" style="text-decoration: none; color:black">
+        <h2>어린이 &amp; 나</h2>
+        <h5 style="color:gray">최사랑 멘토님</h5>
+        <p class="lead mb-0">유치원 선생님이 되고 싶으신가요? 어린이들이 좋아하는 유치원 선생님은 어떤 선생님일까요? 재미있는 선생님? 센스 넘치는 선생님? 저와 함께 알아가보아요!!</p>
+      </div>
+    </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials text-center bg-light">
+  <div class="container">
+    <h2 class="mb-5">새로 등록된 기업</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0"><a href="#" style="color:black; text-decoration: none">
+          <img class="img-fluid rounded-circle mb-3" src="../static/img/sm.png" alt="">
+          <h5>sm엔터테인먼트</h5>
+          <p class="font-weight-light mb-0">"가수, 배우, 탤런트를 배출하는 기업입니다."</p>
+        </div>
+      </a>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0"><a href="#" style="color:black; text-decoration: none">
+          <img class="img-fluid rounded-circle mb-3" src="../static/img/eag.png" alt="">
+          <h5>한화그룹_한화이글스</h5>
+          <p class="font-weight-light mb-0">"이제 글로벌 한화의 꿈이 하늘 높이 비상합니다."</p>
+        </div>
+      </a>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-item mx-auto mb-5 mb-lg-0"><a href="#" style="color:black; text-decoration: none">
+          <img class="img-fluid rounded-circle mb-3" src="../static/img/lotte.jpg" alt="">
+          <h5>Sarah	W.</h5>
+          <p class="font-weight-light mb-0">"세계로 뻗어나가는 힘 바로 롯데그룹입니다."</p>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /.container -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+{% endblock content %}
+
+{% block footer %}
+<!-- Footer -->
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

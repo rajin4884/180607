@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}post_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/cmpforms.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+
+    <h1>회사 정보 입력</h1>
+
+    <form action="." method="post">
+      {% csrf_token %}
+
+    {% if form.errors %}
+    <p class="errornote">빈 칸을 모두 입력해주시길 바랍니다.</p>
+    {% endif %}
+
+    <p>아래에 회사 기초 정보를 입력해주십시오.</p>
+
+    <fieldset class="aligned">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th>{{ form.company_name.label_tag }}</th>
+            <td>{{ form.company_name }}</td>
+          </tr>
+          <tr>
+            <th>{{ form.occ.label_tag }}</th>
+            <td>{{ form.occ }}</td>
+          </tr>
+          <tr>
+            <th>{{ form.location.label_tag }}</th>
+            <td>{{ form.location }}</td>
+          </tr>
+          <tr>
+            <th>{{ form.scale.label_tag }}</th>
+            <td>{{ form.scale }}</td>
+          </tr>
+          <tr>
+            <th>{{ form.payment.label_tag }}</th>
+            <td>{{ form.payment }} </td>
+          </tr>
+
+        </tbody>
+      </table>
+          <div class="submit-row">
+              <input type="submit" value="확인" class="btn"/>
+          </div>
+
+        <!-- <div class="form-row">
+
+        </div>
+
+        <div class="form-row">
+            {{ form.occ.label_tag }} {{ form.occ }}
+        </div>
+
+        <div class="form-row">
+            {{ form.location.label_tag }} {{ form.location }}
+        </div>
+
+        <div class="form-row">
+            {{ form.scale.label_tag }} {{ form.scale }}
+        </div>
+
+        <div class="form-row">
+            {{ form.payment.label_tag }} {{ form.payment }} 만원
+        </div> -->
+
+    </fieldset>
+
+    <script type="text/javascript">document.getElementById('id_title').focus();</script>
+    </form>
+
+</div>
+{% endblock %}

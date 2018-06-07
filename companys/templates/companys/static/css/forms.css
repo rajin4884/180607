@@ -1,0 +1,128 @@
+/* Form Error */
+div#content {
+    position: absolute;
+    top: 13%;
+    left:35%;
+    width:60%;
+}
+/*  로그인 --------------------------------------------------------------------------------*/
+
+.errornote {
+    display: block;
+    margin: 5px 0;
+    border: 1px solid #c30;
+    background: #fcf;
+    padding: 5px 25px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+div#content0 {
+    position: absolute;
+    top: 20%;
+    left:35%;
+    width:30%;
+}
+
+
+div#content0 p{
+  width:420px;
+  border-bottom: 1px solid #c30;
+}
+
+/*  로그아웃 폼*/
+div#content1 {
+    position: absolute;
+    top: 25%;
+    left: 32%;
+    text-align: center
+}
+
+/*  전체 필드*/
+fieldset {
+    border: none;
+}
+
+.aligned label {
+    float: left;
+    width: 100px;
+    padding: 1px 10px 0 0;
+}
+
+/*  아이디,비번  위치조정*/
+.form-row {
+    padding: 10px 1px;
+    /* font-size: 13px; */
+}
+
+/*  아이콘 위치 조정*/
+.form-row span{
+    width:35px;
+    float:left;
+    /* border-bottom: 1px solid #eee; */
+}
+
+/*  아이디,비밀번호 입력창*/
+.form-row input{
+  width:300px;
+  height:30px;
+}
+
+/* 회원가입 버튼조정 */
+/* .form-row a{
+  width:300px;
+} */
+
+/*  버튼 위치 조정*/
+.submit-row {
+    margin: 1% -1%;
+}
+
+.submit-row button {
+    background-color: #F9A277;
+    border:none;
+}
+.submit-row a {
+    background-color: #333741;
+    border:none;
+    color:white;
+}
+/*  비밀번호 변경 --------------------------------------------------------------------------------*/
+.aligned1 label {
+    float: left;
+    width: 130px;
+    padding: 1px 13px 0 0;
+}
+/*  회원가입----------------------------------------------------------------------------------------------------*/
+div#content4 {
+    position: absolute;
+    top: 20%;
+    left:35%;
+    width:50%;
+}
+
+div#content4 form{
+  width:350px;
+}
+
+/*  폼------------------------*/
+div#content0 .form-group input{
+    /*margin: 0 0 0 100px;*/
+} 
+
+/*select.form-control{
+    float: left;
+}*/
+
+/*select#id_birth_date_month.form-control{
+    float:left;
+}
+select#id_birth_date_year.form-control{
+    float:left;
+}
+*/
+label{
+    width: 105px;
+    text-align: center;
+}

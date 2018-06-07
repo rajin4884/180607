@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/add.css" %}{% endblock %}
+
+{% block content %}
+<div class="col-md-12">
+		<h1 class="text-center">멘토 수업 등록</h1>
+		<hr>
+</div>
+<div class="post">
+	<div class="row">
+  <form method="POST" class="post-form" enctype="multipart/form-data" action=".">{% csrf_token %}
+			<!-- {{ form.as_p }} -->
+			<table class="out">
+				<tr>
+					<td>
+						<table class="in">
+							<tr>
+								<td class="tdsize">멘토링명</td>
+								<td> {{ form.title }}</td>
+							</tr>
+							<tr>
+								<td class="tdsize">사진</td>
+								<td> {{ form.photo }}</td>
+							</tr>
+							<tr>
+								<td class="tdsize">경력</td>
+								<td> {{ form.career }}</td>
+							</tr>
+							<tr>
+								<td class="tdsize">금액</td>
+								<td> {{ form.money }}</td>
+							</tr>
+							<tr>
+								<td class="tdsize">내용</td>
+								<td> {{ form.text }}</td>
+							</tr>
+							<tr>
+								<td class="tdsize">참고 url</td>
+								<td> {{ form.link }}</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<br>
+      <button type="submit" class="save btn btn-default">등록</button>
+  </form>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}photo_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<div id="content0">
+
+    <h2>멘토링 정보 등록</h2>
+
+    {% if form.is_multipart %}
+    <form enctype="multipart/form-data" method="post" action=".">
+    {% else %}
+    <form method="post" action=".">
+    {% endif %}
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <p class="errornote">잘못입력하셨습니다. 다시 한번 확인해주세요!</p>
+    {% endif %}
+
+
+    <fieldset class="aligned">
+
+        <div class="form-row">
+          <label>대표 사진</label>
+            <!-- {{ form.image.label_tag }} -->
+             {{ form.image }}
+
+<!-- 0525 -->
+             <!-- <form action="{% url scvd.views.merchant_image_upload %}" method="post">{% csrf_token %}
+                 {{ form.image }}
+                 <input type="submit" value="Upload" />
+             </form> -->
+
+        </div>
+
+        <!-- <div class="form-row">
+            {{ form.album.label_tag }} {{ form.album }}
+            <button type="button"><a href="{% url 'photo:album_add' %}">Add Album</a></button>
+        </div> -->
+
+        <div class="form-row">
+            <label>멘토링 제목</label>
+            <!-- {{ form.title.label_tag }}  -->
+            {{ form.title }}
+        </div>
+
+        <div class="form-row">
+            <label>멘토링 소제목</label>
+            <!-- {{ form.title.label_tag }}  -->
+            {{ form.title }}
+        </div>
+
+        <div class="form-row">
+            <label>경력</label>
+            <!-- {{ form.title.label_tag }}  -->
+            {{ form.year }}
+        </div>
+
+        <div class="form-row">
+            <label>멘토링 계획</label>
+            <!-- {{ form.description.label_tag }} -->
+             {{ form.description }}
+        </div>
+
+        <div class="form-row">
+            <label>가격</label>
+            <!-- {{ form.title.label_tag }}  -->
+            {{ form.money }}
+        </div>
+
+    </fieldset>
+
+    <div class="submit-row">
+        <!-- <input type="submit" value="Submit"/> -->
+        <button type="submit" class="btn btn-primary">등록</button>
+    </div>
+
+    <script type="text/javascript">document.getElementById('id_album').focus();</script>
+
+    </form>
+
+</div>
+{% endblock %}

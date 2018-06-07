@@ -1,0 +1,450 @@
+/* html {
+  position: relative;
+  min-height: 100%;
+} */
+body {
+    /* background: url("http://goo.gl/0OJNRW") no-repeat center center fixed; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+    color: black;
+    /* margin-bottom: 4em; */
+     font-family: 'Lato', sans-serif;
+     /* font-family: 'Bellefair', serif;  */
+    /* font-family: 'Kurale', serif; */
+    /* font-weight: 500; */
+}
+
+
+#bs-example-navbar-collapse-1 > ul
+ > li.dropdown.open > ul > li > a {
+    color:white;
+}
+#bs-example-navbar-collapse-1 > ul > li.dropdown.open > ul > li > a:hover {
+    color: black;
+}
+#bs-example-navbar-collapse-1 > ul > li.dropdown.open > ul {
+    background: rgba(20, 20, 25, 0.9);
+}
+
+.text-center{
+  font-size: 30px;
+}
+
+.text-center a {
+  text-decoration: none;
+}
+#search{
+    font-size: 15px;
+}
+
+.btn:hover, .btn:focus {
+    font-size: 1.05em;
+    list-style:none;
+    text-decoration:none;
+}
+img {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  object-fit: cover;
+  margin-top: 35px;
+  height: 300px;
+  width: 400px;
+}
+
+.navbar1 .navbar-nav  li  a:focus, .navbar1 .navbar-nav > li > a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.navbar2 .navbar-nav  li  a:focus, .navbar2 .navbar-nav > li > a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.navbar2 .navbar-nav > li > a {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    font-style:bold;
+}
+.navbar2 .navbar-brand, .navbar1{
+    color: white;
+}
+
+.navbar1{
+    /* margin:0px; */
+    border-radius: 0px;
+    background: rgba(50, 90, 230, 0.45);
+    border-color: transparent;
+    color:white;
+}
+.navbar1 ul {
+    font-size: 20px;
+    padding-top: 15px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-brand:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+
+.navbar2{
+    margin:0px;
+    border-radius: 0px;
+    background: rgba(25, 25, 25, 0.3);
+    border-color: transparent;
+}
+.navbar2 ul {
+    font-size: 14px;
+    padding-top: 0px;
+}
+
+hr {
+    height: 4px;
+}
+.glyphicon {
+    font-weight: 100;
+}
+
+.title-super {
+    font-size: 45px;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+}
+.title-super:hover {
+    font-size: 45px;
+}
+.title-super2, .navbar2 ul {
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.title-row {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.landtitle {
+    font-size: 50px;
+}
+.postlanding a {
+    color:white;
+}
+.fullscreen {
+    width:100%;
+}
+.halfwidth {
+    width: 50%;
+}
+.twothirds {
+    width:75%;
+}
+
+
+.btn-primary, .btn-primary:focus  {
+    background-color: rgba(10, 90, 233, 0.9);
+    background-image: none;
+    border-color: rgba(71, 90, 233, 0.86);
+    width:100%;
+    border-radius:100px;
+    margin-top: 1em;
+}
+.btn-primary:hover {
+    background-color: rgba(44, 65, 225, 0.9);
+}
+.btn-danger, .btn-danger:focus {
+    background-color: rgba(212, 65, 132, 0.86);
+    background-image: none;
+    border-color:  rgba(212, 65, 132, 0.86);
+    width:100%;
+    border-radius:100px;
+    margin-top: 1em;
+}
+
+.btn-danger:hover {
+    background-color: rgba(220,60, 130, 0.9);
+}
+
+.delete {
+    padding-left: 20.5%;
+    padding-right:20.5%;
+}
+.btn-info {
+    background-color: rgba(71, 90, 233, 0.9);
+    background-image: none;
+    border-color: rgba(71, 90, 233, 0.86);
+    width:100%;
+    border-radius:100px;
+    margin-top: 1em;
+}
+.btn-info:hover {
+    background-color: rgba(44, 65, 225, 0.9);
+}
+.landrow {
+    padding-top: 7em;
+
+}
+
+
+.contentcontainer {
+    margin-top:1em;
+}
+
+
+.post, .postmini, .postuser  {
+    border: 2px solid #e19c97;
+    border-radius: 5px;
+    padding: 1em;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    margin: 2rem 1.5%;
+    background: rgba(255, 255, 255, 1);
+    overflow: hidden;
+}
+
+
+.postmini {
+    position: relative;
+    width: 30%;
+    height: auto;
+    top: 50px;
+}
+
+.postmini form{
+  position: relative;
+  margin: 20px auto;
+
+}
+.postmini form input{
+  width: 400px;
+}
+
+.postmini form  #search{
+  width: 100px;
+}
+
+.postuser{
+    width:75%;
+}
+
+.white{
+    color:black;
+}
+
+#id_photo, #id_picture {
+    color: black;
+}
+input[type="file"] {
+    display: inline-block;
+}
+.commenta {
+    color: #4a58f6;;
+}
+
+ .posttitle > a:hover, .posttitle > a:focus, .postuser > a:hover, .postuser > a:focus {
+
+    color:  white;
+}
+
+#postman {
+    border: 2px solid gray;
+    border-radius: 5px;
+    background: rgba(20, 20, 25, 0.7);
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 1em;
+
+    margin-bottom:20px;
+}
+
+textarea {
+    color:black;
+}
+
+input, button{
+    color:black;
+}
+#id_postcategory{
+    color:black;
+}
+#id_body {
+    width: 100%;
+}
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+.craftimage{
+    max-width: 100%;
+    max-height: 35%;
+}
+
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background: rgba(25, 25, 25, 0.2);
+}
+
+.footer ul {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom:0;
+    padding: 0;
+
+}
+
+.footer ul li a {
+    display: block;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.footer a {
+    color: black;
+}
+
+
+.footer a:hover {
+    color: #fff;
+}
+
+
+@media(max-width: 640px) {
+    .title-super {
+        font-size: 1.2em;
+        padding-bottom: .5em;
+    }
+    .title-super:hover, .title-super:focus {
+        font-size: 1.2em;
+    }
+     .title-super2:hover, .title-super2:focus {
+        font-size: 1em;
+    }
+    .title-super2 {
+        font-size: 1em;
+    }
+    #bs-example-navbar-collapse-2  {
+        background: rgba(20, 20, 25, 0.7);
+    }
+    .date {
+        text-align: left;
+    }
+    #id_text {
+        max-width: 250px;
+    }
+
+    #id_password1, #id_password2, #id_username, #id_email, #id_location, #id_hobby {
+        max-width: 200px;
+    }
+
+
+    .post, .postmini, .postuser {
+        box-shadow: none;
+        margin-top: 0;
+        margin-bottom: :5px;
+    }
+}
+@media (min-width 640px, max-width: 790) {
+    .craftimage{
+
+        max-height: 40%;
+        max-width: 400px;
+    }
+
+
+    .postmini {
+        width: 40%;
+    }
+}
+@media (min-width: 790px) {
+  .post, .postmini, .postuser  {
+      margin: 2rem 1%;
+  }
+
+    Navbar positioning
+    .navbar-wrapper {
+        margin-top: 20px;
+    }
+
+    .navbar-wrapper .container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .navbar-wrapper .navbar1, .navbar-wrapper .navbar2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-top: .5em;
+    }
+    h1 {
+      padding :50px 0px 0px 0px;
+      color: black;
+    }
+    .search{
+      position: relative;
+      padding-left: 33%;
+      background-color: blac
+    }
+
+}
+
+
+
+label {
+    width: 100px;
+    padding: 1px 10px 0 0;
+}
+div.row  input{
+    position:relative;
+    left: 10px;
+    width: 250px;
+}
+
+div.row  textarea{
+    position:relative;
+    left: 10px;
+    width: 500px;
+}
+
+.row{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box{
+  padding : 10px;
+}
+.sbutton{
+  display: table;
+  margin-left: auto;
+}
+form{
+  position: relative;
+  margin: 20px auto;
+
+}
+form input{
+  width: 400px;
+}
+
+form  #search{
+  width: 100px;
+}
+footer{
+  position: absolute;
+  bottom: -600px;
+  width: 100%
+}

@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/style.css" %}{% endblock %}
+{% block content %}
+
+<html>
+<head>
+<title>글보기</title>
+</head>
+
+<script language="javascript">
+
+    function boardlist()
+    {
+        var s = "{{searchStr}}";
+
+        if(s=="None")
+            location.href = '/board?current_page={{current_page}}';
+        else
+            location.href = '/board/listSearchedSpecificPageWork?pageForView={{current_page}}&searchStr={{searchStr}}';
+    }
+
+    function boardmodify()
+    {
+        location.href='/board/listSpecificPageWork_to_update?memo_id={{memo_id}}&current_page={{current_page}}&searchStr={{searchStr}}';
+    }
+
+    function boarddelete()
+    {
+        location.href='/board/DeleteSpecificRow?memo_id={{memo_id}}&current_page={{current_page}}';
+    }
+
+</script>
+
+<div class="centered">
+  <br>
+  <h3>자유게시판 글보기</h3>
+  <hr>
+<div class="BDdetail">
+
+  <h2>"{{boardData.subject }}"</h2>
+
+  <table class="detail" width=100% border=1 cellspacing=0 cellpadding=5>
+  <!-- <form name=writeform method=post action="/board/DoWriteBoard/"> -->
+      <tr>
+        <td style="width: 100px; text-align: center;"><b>게시글 번호</b></td>
+        <td>{{ boardData.id}}</td>
+      </tr>
+      <tr>
+        <td style="width: 100px; text-align: center;"><b>작성일</b></td>
+        <td>{{ boardData.created_date }}</td>
+      </tr>
+      <tr>
+        <td style="width: 100px; text-align: center;"><b>작성자</b></td>
+        <td>{{ boardData.name }}</td>
+      </tr>
+      <tr>
+        <td style="width: 100px; text-align: center;"><b>내용</b></td>
+        <td>{{ boardData.memo|linebreaks }}</td>
+      </tr>
+
+
+  </table>
+
+  <div style="width:100%; margin :20px 0;" class="clearfix">
+    <div class="pull-left" ></div>
+    <div class="pull-right" >
+      {% if user.is_superuser or request.user == craftpost.author %}
+          <input type=button value="수정" OnClick="javascript:boardmodify()">
+          <input type=button value="목록" OnClick="javascript:boardlist()">
+          <input type=button value="삭제" OnClick="javascript:boarddelete()">
+      {% endif %}
+    </div>
+  </div>
+
+
+  <div style="width:100%;">
+  {% load disqus_tags %}
+  {% disqus_show_comments %}
+  </div>
+</div>
+</html>
+
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+        <ul class="list-inline mb-2">
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">About</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Contact</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Terms of Use</a>
+          </li>
+          <li class="list-inline-item">&sdot;</li>
+          <li class="list-inline-item">
+            <a href="#" style="color:gray">Privacy Policy</a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px">&copy; 스타터스</p>
+        <p class="text-muted small mb-4 mb-lg-0" style="font-size:13px"> 스타터스는 여러분과 함께 성장합니다.</p>
+
+      </div>
+      <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-twitter fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" style="color:#F9A277">
+              <i class="fa fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock footer %}
+<!-- <hr style="width:50%;left: 0;margin-left: 0;">
+<table cellspacing = 0 cellpadding = 5 border = 1 width=500>
+  <table cellspacing=1 width=700 border=1>
+    <thead>
+      <tr>
+          <td width=50><p align=center><b>번호</b></p>
+          </td>
+          <td width=100><p align=center><b>이름</b></p>
+          </td>
+          <td width=320><p align=center><b>제목</b></p>
+          </td>
+          <td width=320><p align=center><b>내용</b></p>
+          </td>
+          <td width=100><p align=center><b>등록일</b></p>
+          </td>
+      </tr>
+    </thead>
+    <tbody>
+              <tr>
+              <td width=50><p align=center>{{ boardData.id }}</p></td>
+              <td width=100><p align=center>{{ boardData.name }}</p></td>
+              <td width=320>
+                  <p align=center>
+                      <a href="/board/viewWork?memo_id={{ boardRow.id }}&current_page={{ pageForView }}&searchStr={{searchStr}}" title="{{ boardRow.memo}}">{{ boardData.subject }}
+                  </p>
+              </td>
+              <td width=350> {{ boardData.memo }} </td>
+              <td width=100><p align=center>{{ boardData.created_date }}</p></td>
+              </tr>
+      </tbody> -->

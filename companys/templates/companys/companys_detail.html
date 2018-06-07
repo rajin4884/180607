@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base.css" %}{% endblock %}" />
+
+
+{% block content %}
+<div id="content">
+
+<div class="body">
+  <table class="table table-borderless">
+    <tbody>
+      <thead>
+        <tr>
+          <th>
+            <h2>{{ object.company_name }} - {{ object.owner }}</h2>
+          </th>
+          <th>
+            <h2></h2>
+          </th>
+        </tr>
+      </thead>
+      <tr>
+        <th>직종</th>
+        <td>{{ object.occ }}</td>
+      </tr>
+      <tr>
+        <th>위치</th>
+        <td>{{ object.location }}</td>
+      </tr>
+      <tr>
+        <th>규모</th>
+        <td>{{ object.scale }}</td>
+      </tr>
+      <tr>
+        <th>연봉</th>
+        <td>약 {{ object.payment }} 만원</td>
+    </tbody>
+  </table>
+<button type="button" class="btn btn-sm"><a href="{% url 'companys:companys_list' %}"/>뒤로가기</button>
+</div>
+
+
+<br/>
+<!-- <div>
+{% load disqus_tags %}
+{% disqus_show_comments %}
+</div> -->
+
+</div>
+{% endblock %}

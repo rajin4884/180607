@@ -1,0 +1,52 @@
+<style>
+.pagination {
+  list-style:none;
+  position: relative;
+  float:left;
+  margin-bottom: -150px;
+  display:inline;
+}
+.pagination li {
+    float:left;
+        /* background-color:#f40; */
+}
+.pagination li a, .pagination span {
+    float:left;
+    padding:4px;
+    margin-right:3px;
+    color:#000;
+    border:2px solid #000;
+    text-align:center;
+    text-decoration:none;
+}
+.pagination li a:hover, .pagination li a:focus {
+    color:#fff;
+    background-color:#123;
+}
+.pagination{
+  margin-bottom: 0;
+}
+</style>
+
+
+{% if craftposts.has_other_pages %}
+ <ul class="pagination">
+   {% if craftposts.has_previous %}
+     <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+   {% else %}
+     <li class="disabled"><span>&laquo;</span></li>
+   {% endif %}
+   {% for i in craftposts.paginator.page_range %}
+     {% if craftposts.number == i %}
+       <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+     {% else %}
+       <li><a href="?page={{ i }}">{{ i }}</a></li>
+     {% endif %}
+   {% endfor %}
+   {% if craftposts.has_next %}
+     <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+   {% else %}
+     <li class="disabled"><span>&raquo;</span></li>
+   {% endif %}
+ </ul>
+{% endif %}
