@@ -39,7 +39,7 @@
     <li>내용: </li>
     <p>{{ craftpost.text|linebreaks }}</p>
   </div>
-  {% if user.is_authenticated and request.user %}
+  {% if user.is_superuser or request.user == craftpost.author %}
   <div class="row">
       <div class="col-md-6 col-lg-6">
           <div class="halfwidth center-block">

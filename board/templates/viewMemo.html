@@ -61,19 +61,17 @@
 
 
   </table>
-
+  {% if user.is_authenticated %}
   <div style="width:100%; margin :20px 0;" class="clearfix">
     <div class="pull-left" ></div>
     <div class="pull-right" >
-      {% if user.is_superuser or request.user == craftpost.author %}
           <input type=button value="수정" OnClick="javascript:boardmodify()">
           <input type=button value="목록" OnClick="javascript:boardlist()">
           <input type=button value="삭제" OnClick="javascript:boarddelete()">
-      {% endif %}
+
     </div>
   </div>
-
-
+  {%endif%}
   <div style="width:100%;">
   {% load disqus_tags %}
   {% disqus_show_comments %}
