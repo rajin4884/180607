@@ -1,0 +1,221 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+ h1,h2,h3,h4,h5,h6{
+   font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+   font-weight:700
+   }
+
+
+   header.masthead{
+     position:relative;
+     background-color:#343a40;
+     background:url(../img/start.jpg) no-repeat center center;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     background-size:cover;
+     padding-top:8rem;
+     padding-bottom:8rem
+     }
+
+     header.masthead .overlay{
+         position:absolute;
+         background-color:#212529;
+         height:100%;
+         width:100%;
+         top:0;
+         left:0;
+         opacity:.3
+     }
+
+     header.masthead h1{
+       font-size:2rem
+       }
+
+         @media (min-width:768px){
+           header.masthead{
+             padding-top:12rem;
+             padding-bottom:12rem
+             }
+           header.masthead h1{
+             font-size:3rem
+             }
+           }
+
+         .showcase .showcase-text{
+             padding:3rem
+             }
+
+         .showcase .showcase-img{
+               min-height:30rem;
+               background-size:cover
+               }
+         @media (min-width:768px){
+             .showcase .showcase-text{
+               padding:7rem
+               }
+               }
+
+         .features-icons{
+           padding-top:3rem;
+           padding-bottom:7rem
+           }
+
+         .features-icons .features-icons-item{
+             max-width:20rem
+         }
+
+         .features-icons .features-icons-item .features-icons-icon{
+           height:7rem
+         }
+
+         .features-icons .features-icons-item .features-icons-icon i{
+           font-size:4.5rem
+         }
+
+         .features-icons .features-icons-item:hover .features-icons-icon i{
+           font-size:5rem
+           }
+
+         .testimonials{
+           padding-top:7rem;
+           padding-bottom:7rem
+           }
+
+         .testimonials .testimonial-item{
+           max-width:18rem
+           }
+
+         .testimonials .testimonial-item img{
+           max-width:12rem;
+           box-shadow:0 5px 5px 0 #adb5bd
+           }
+
+         .call-to-action{
+           position:relative;
+           background-color:#343a40;
+           background:url(../img/bg-masthead.jpg) no-repeat center center;
+           -webkit-background-size:cover;
+           -moz-background-size:cover;
+           -o-background-size:cover;
+           background-size:cover;
+           padding-top:7rem;
+           padding-bottom:7rem
+           }
+
+         .call-to-action .overlay{
+           position:absolute;
+           background-color:#212529;
+           height:100%;
+           width:100%;
+           top:0;
+           left:0;
+           opacity:.3
+           }
+ ul#topbar {
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     z-index: 1030;
+ }
+ div#content {
+     margin: 50px 10%;
+ }
+
+.navbar-dark {
+     background-color: #000000;
+ }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #eee;
+    font-weight: 600;
+    font-size: 14px;
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+
+@media (min-width: 992px) {
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: #ddd;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 0 .9rem;
+    }
+
+  .navbar-dark .navbar-brand {
+      color: #ddd;
+      font-size: 30px;
+      font-weight: 900;
+  }
+}
+
+@media (min-width:771px) and (max-width: 991px) {
+  .navbar-dark .navbar-brand {
+      color: #ddd;
+      font-size: 30px;
+      font-weight: 900;
+  }
+
+}
+
+@media (min-width:550px) and (max-width: 770px) {
+  .navbar-dark .navbar-brand {
+      color: #ddd;
+      font-size: 20px;
+      font-weight: 900;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+      color: #ddd;
+      font-size: 10px;
+      padding: 0 .3rem;
+  }
+}
+
+@media (max-width:549px){
+  .navbar-dark .navbar-brand {
+      font-weight: 900;
+  }
+}
+.topbar {
+    height: 40px;
+    /* background: #343a40; */
+    background:#F9A277;
+    font-size: 15px;
+    margin-bottom: 0px;
+    width: 100%;
+
+}
+
+.topbar .nav-link {
+    display: block;
+    padding: .5rem .4rem;
+    color: black;
+    font-size: 15px;
+}
+
+.topbar .nav-link:hover {
+    color: white;
+}
+
+/* 로그인 했을 때 ~~~님 부분 */
+.navbar-dark .navbar-text {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+footer.footer{
+  padding-top:4rem;
+  padding-bottom:4rem
+}
+
+/* .card7 img:hover{
+  background-color:yellow;
+  z-index: 1000;
+} */
