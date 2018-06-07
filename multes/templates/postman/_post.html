@@ -30,11 +30,11 @@
               <hr>
               <div class="row">
                   <div class="col-md-6">
-                      <p>대기중: {{ craftpost.approved_comments.count }}</p>
+                      댓글: {{ craftpost.unapproved_comments.count }}
                   </div>
                   {% if user.is_superuser or request.user == craftpost.author %}
                   <div class="col-md-6">
-                      댓글: {{ craftpost.unapproved_comments.count }}
+                      <p>대기중: {{ craftpost.approved_comments.count }}</p>
                   </div>
                   {% else %}
                   <div class="col-md-6">
